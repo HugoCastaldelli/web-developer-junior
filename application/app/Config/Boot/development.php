@@ -33,20 +33,3 @@ defined('SHOW_DEBUG_BACKTRACE') || define('SHOW_DEBUG_BACKTRACE', true);
  */
 defined('CI_DEBUG') || define('CI_DEBUG', true);
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-
-$capsule = new Capsule;
-
-$capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
-    'database'  => 'posts_database',
-    'username'  => 'root',
-    'password'  => 'senha',
-    'charset'   => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix'    => '',
-]);
-
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
