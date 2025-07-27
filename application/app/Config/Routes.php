@@ -15,5 +15,6 @@ $routes->get('/dashboard', function() {
 $routes->get('/registrar', 'Auth::register');
 $routes->post('/registrar', 'Auth::createAccount');
 $routes->get('/posts', 'PostController::index');
+$routes->get('/posts/(:any)', 'PostController::userPosts/$1');
 $routes->get('/posts/criar', 'PostController::create');
 $routes->post('/posts/criar', 'PostController::store');
