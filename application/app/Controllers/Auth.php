@@ -20,10 +20,11 @@ class Auth extends BaseController
         // Busca pelo campo "usuario" usando o Model do CodeIgniter
         $user = (new User())->where('usuario', $usuario)->first();
 
-        if ($user && password_verify($senha, $user->senha)) {
+
+        if ($user && password_verify($senha, $user['senha'])) {
             // Login bem-sucedido (armazenar na sessão se desejar)
-            session()->set('usuario', $user->usuario);
-            return redirect()->to('/dashboard');
+            session()->set('usuario', $user['usuario']);
+            return redirect()->to('/posts');
         }
 
         return redirect()->back()->withInput()->with('error', 'Usuário ou senha inválidos.');
