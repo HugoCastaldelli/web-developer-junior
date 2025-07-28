@@ -1,0 +1,20 @@
+# Ignorar o arquivo .env (contém configurações sensíveis)
+.env
+
+# Pasta de dependências do Composer
+/vendor
+
+# Diretórios do sistema (pasta de cache e logs)
+writable/*
+/system/cache/*
+/system/logs/*
+
+# Ignorar arquivos de configuração locais
+.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de sistema do OS
+.DS_Store
+Thumbs.db
